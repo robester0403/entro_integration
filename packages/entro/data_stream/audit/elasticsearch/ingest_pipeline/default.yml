@@ -1,0 +1,58 @@
+---
+description: Pipeline for processing and enriching Entro audit logs according to ECS.
+processors:
+  - set:
+      field: ecs.version
+      value: '8.11.0'
+  - set:
+      field: '@timestamp'
+      copy_from: date
+  - set:
+      field: event.id
+      copy_from: request_id
+      ignore_empty_value: true
+  - set:
+      field: vulnerability.classification
+      copy_from: secret_type
+      ignore_empty_value: true
+  - set:
+      field: vulnerability.description
+      copy_from: exposed_value
+      ignore_empty_value: true
+  - set:
+      field: secret.line
+      copy_from: line_number
+      ignore_empty_value: true
+  - set:
+      field: secret.value
+      copy_from: exposed_value
+      ignore_empty_value: true
+  - set:
+      field: secret.type
+      copy_from: secret_type
+      ignore_empty_value: true
+  - remove:
+      field:
+        - date
+        - request_id
+        - secret_type
+        - line_number
+        - exposed_value
+      ignore_missing: true
+  - set:
+      field: event.kind
+      value: event
+  - set:
+      field: event.category
+      value: ["vulnerability"]
+  - set:
+      field: event.type
+      value: ["info"]
+  - set:
+      field: event.dataset
+      value: "entro.audit"
+on_failure:
+  - set:
+      field: error.message
+      value: '{{ _ingest.on_failure_message }}'
+

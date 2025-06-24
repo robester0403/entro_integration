@@ -1,0 +1,70 @@
+{
+    "@timestamp": "2025-05-27T20:12:44.000Z",
+    "agent": {
+        "ephemeral_id": "12926096-6eac-45dd-93a1-6485591aa2a9",
+        "id": "fe59410c-77d0-40a2-be67-3eae001066db",
+        "name": "elastic-agent-69632",
+        "type": "filebeat",
+        "version": "8.17.4"
+    },
+    "data_stream": {
+        "dataset": "entro.audit",
+        "namespace": "63180",
+        "type": "logs"
+    },
+    "ecs": {
+        "version": "8.11.0"
+    },
+    "elastic_agent": {
+        "id": "fe59410c-77d0-40a2-be67-3eae001066db",
+        "snapshot": false,
+        "version": "8.17.4"
+    },
+    "event": {
+        "agent_id_status": "verified",
+        "category": [
+            "vulnerability"
+        ],
+        "dataset": "entro.audit",
+        "id": "105d6a3d-6468-4fcc-994e-f525011c53cf",
+        "ingested": "2025-06-24T19:09:22Z",
+        "kind": "event",
+        "type": [
+            "info"
+        ]
+    },
+    "host": {
+        "architecture": "aarch64",
+        "containerized": false,
+        "hostname": "elastic-agent-69632",
+        "ip": [
+            "172.21.0.2",
+            "172.19.0.5"
+        ],
+        "mac": [
+            "AA-58-67-2A-D5-C3",
+            "E2-44-B5-D4-A1-F1"
+        ],
+        "name": "elastic-agent-69632",
+        "os": {
+            "family": "",
+            "kernel": "6.10.14-linuxkit",
+            "name": "Wolfi",
+            "platform": "wolfi",
+            "type": "linux",
+            "version": "20230201"
+        }
+    },
+    "input": {
+        "type": "cel"
+    },
+    "secret": {
+        "line": 878,
+        "type": "GENERIC_CREDS_WINDOWS_PASSWORD",
+        "value": "asd123123"
+    },
+    "vulnerability": {
+        "classification": "GENERIC_CREDS_WINDOWS_PASSWORD",
+        "description": "asd123123"
+    }
+}
