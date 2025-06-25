@@ -130,7 +130,6 @@ An example event for `audit` looks as following:
 | data_stream.type | Data stream type. | constant_keyword |
 | input.type | Input type | keyword |
 | log.offset | Log offset | long |
-| request_id | Unique identifier for the request. | keyword |
 | secret.line | Line number for the event occurred. | long |
 | secret.type | Type of the secret that was exposed. | keyword |
 | secret.value | Value that was exposed in the event. | keyword |

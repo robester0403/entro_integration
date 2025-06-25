@@ -21,7 +21,7 @@ resource.headers:
     - {{api_token}}
 program: |
   (
-    state.?cursor.?last_timestamp.orValue(now - duration("24h"))
+    state.?cursor.?last_timestamp.orValue(now - duration("1440h"))
   ).as(raw_start_value, (
     type(raw_start_value) == string ? timestamp(raw_start_value) : raw_start_value
   ).as(start_time, state.with(
