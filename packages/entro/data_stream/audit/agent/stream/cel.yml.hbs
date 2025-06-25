@@ -54,7 +54,7 @@ program: |
             }]
         ).flatten(),
         "cursor": {
-          "last_timestamp": start_time + duration("24h") // but this will incremement if I reran on the same day
+          "last_timestamp": start_time.format("02/01/2006") != now.format("02/01/2006") ? start_time + duration("24h") : start_time
         },
         "want_more": start_time.format("02/01/2006") != now.format("02/01/2006")
       })
