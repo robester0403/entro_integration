@@ -14,11 +14,11 @@ resource.ssl: {{ssl}}
 resource.timeout: {{http_client_timeout}}
 {{/if}}
 resource.url: {{url}}
+state:
+  api_token: {{api_token}}
 resource.headers:
   Accept:
     - application/json
-  Authorization:
-    - {{api_token}}
 program: |
   (
     state.?cursor.?last_timestamp.orValue(now - duration("1440h"))
@@ -31,7 +31,7 @@ program: |
     }.format_query()).with({
         "Header": {
           "Accept": ["application/json"],
-          "Authorization": ["Bearer foobar"]
+          "Authorization": ["Bearer " + string(state.api_token)],
         }
       }).do_request().as(resp,
     (resp.StatusCode == 200) ?
@@ -75,4 +75,4 @@ program: |
         "want_more": false,
       }
     )
-  ))) // test is passing but how do we limit the number of events returned?
+  )))

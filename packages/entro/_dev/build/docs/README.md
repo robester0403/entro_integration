@@ -2,7 +2,7 @@
 
 ## Overview
 
-[Entro Security](https://entro.security/) allows you to discovers, monitors, and protects non-human identities (NHIs) and secrets. Entro Security also provides management of the lifecycle of these identities and secrets, from creation to rotation.
+[Entro Security](https://entro.security/) allows you to discover, monitors, and protects non-human identities (NHIs) and secrets. Entro Security also provides management of the lifecycle of these identities and secrets, from creation to rotation.
 
 Use the Entro integration to monitor your exposed secrets and types. Then visualize that data in Kibana, create alerts to notify you if something goes wrong, and reference audit logs when troubleshooting an issue.
 
@@ -46,5 +46,3 @@ The audit data stream provides events from the Entro Security /v1/scan/auditLogs
 **Exported fields**
 
 {{event "audit"}}
-
-{{fields "audit"}}

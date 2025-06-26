@@ -16,6 +16,11 @@
                 "type": [
                     "info"
                 ]
+            },
+            "vulnerability": {
+                "category": [
+                    "Secret"
+                ]
             }
         },
         {
@@ -42,13 +47,12 @@
                     }
                 }
             },
-            "secret": {
-                "line": 129,
-                "type": "GENERIC_CREDS",
-                "value": "password = something123"
-            },
             "vulnerability": {
-                "description": "password = something123"
+                "category": [
+                    "Secret"
+                ],
+                "description": "GENERIC_CREDS",
+                "reference": "password = something123"
             }
         },
         {
@@ -75,13 +79,12 @@
                     }
                 }
             },
-            "secret": {
-                "line": 150,
-                "type": "AWS_ACCESS_KEY_ID",
-                "value": "ABCDEF12345789"
-            },
             "vulnerability": {
-                "description": "ABCDEF12345789"
+                "category": [
+                    "Secret"
+                ],
+                "description": "AWS_ACCESS_KEY_ID",
+                "reference": "ABCDEF12345789"
             }
         },
         {
@@ -108,13 +111,12 @@
                     }
                 }
             },
-            "secret": {
-                "line": 138,
-                "type": "GENERIC_CREDS",
-                "value": ".ses_smtp_password_v4\": \"ABCDEF12345789"
-            },
             "vulnerability": {
-                "description": ".ses_smtp_password_v4\": \"ABCDEF12345789"
+                "category": [
+                    "Secret"
+                ],
+                "description": "GENERIC_CREDS",
+                "reference": ".ses_smtp_password_v4\": \"ABCDEF12345789"
             }
         }
     ]

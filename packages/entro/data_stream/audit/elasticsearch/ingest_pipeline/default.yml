@@ -12,7 +12,7 @@ processors:
       copy_from: request_id
       ignore_empty_value: true
   - set:
-      field: vulnerability.description
+      field: vulnerability.reference
       copy_from: exposed_value
       ignore_empty_value: true
   - set:
@@ -20,15 +20,11 @@ processors:
       copy_from: line_number
       ignore_empty_value: true
   - set:
-      field: secret.line
-      copy_from: line_number
+      field: vulnerability.category
+      value: ["Secret"]
       ignore_empty_value: true
   - set:
-      field: secret.value
-      copy_from: exposed_value
-      ignore_empty_value: true
-  - set:
-      field: secret.type
+      field: vulnerability.description
       copy_from: secret_type
       ignore_empty_value: true
   - set:

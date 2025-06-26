@@ -50,9 +50,11 @@ streams:
         type: password
         title: API Token
         description: The bearer token for authenticating to the Entro API.
+        multi: false
         required: true
-        show_user: false
+        show_user: true
         secret: true
+        default: foobar
       - name: processors
         type: yaml
         title: Processors

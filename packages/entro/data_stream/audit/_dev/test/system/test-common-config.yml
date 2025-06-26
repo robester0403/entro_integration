@@ -2,8 +2,7 @@ input: cel
 service: entro
 vars:
   url: http://{{Hostname}}:{{Port}}
-  client_id: xxxx
-  client_secret: xxxx
+  api_token: xxxx
 data_stream:
   vars:
     interval: 10s

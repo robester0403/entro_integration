@@ -2,7 +2,7 @@
 
 ## Overview
 
-[Entro Security](https://entro.security/) allows you to discovers, monitors, and protects non-human identities (NHIs) and secrets. Entro Security also provides management of the lifecycle of these identities and secrets, from creation to rotation.
+[Entro Security](https://entro.security/) allows you to discover, monitors, and protects non-human identities (NHIs) and secrets. Entro Security also provides management of the lifecycle of these identities and secrets, from creation to rotation.
 
 Use the Entro integration to monitor your exposed secrets and types. Then visualize that data in Kibana, create alerts to notify you if something goes wrong, and reference audit logs when troubleshooting an issue.
 
@@ -51,22 +51,22 @@ An example event for `audit` looks as following:
 {
     "@timestamp": "2025-05-27T20:12:44.000Z",
     "agent": {
-        "ephemeral_id": "12926096-6eac-45dd-93a1-6485591aa2a9",
-        "id": "fe59410c-77d0-40a2-be67-3eae001066db",
-        "name": "elastic-agent-69632",
+        "ephemeral_id": "d4fc3ff0-6f07-4116-be21-9ee4db39543a",
+        "id": "491f247e-e7b8-467c-978c-f57ee6b65944",
+        "name": "elastic-agent-95605",
         "type": "filebeat",
         "version": "8.17.4"
     },
     "data_stream": {
         "dataset": "entro.audit",
-        "namespace": "63180",
+        "namespace": "64882",
         "type": "logs"
     },
     "ecs": {
         "version": "8.11.0"
     },
     "elastic_agent": {
-        "id": "fe59410c-77d0-40a2-be67-3eae001066db",
+        "id": "491f247e-e7b8-467c-978c-f57ee6b65944",
         "snapshot": false,
         "version": "8.17.4"
     },
@@ -75,9 +75,10 @@ An example event for `audit` looks as following:
         "category": [
             "vulnerability"
         ],
+        "created": "2025-05-27T20:12:44.000Z",
         "dataset": "entro.audit",
         "id": "105d6a3d-6468-4fcc-994e-f525011c53cf",
-        "ingested": "2025-06-24T19:09:22Z",
+        "ingested": "2025-06-25T14:18:53Z",
         "kind": "event",
         "type": [
             "info"
@@ -86,16 +87,16 @@ An example event for `audit` looks as following:
     "host": {
         "architecture": "aarch64",
         "containerized": false,
-        "hostname": "elastic-agent-69632",
+        "hostname": "elastic-agent-95605",
         "ip": [
             "172.21.0.2",
             "172.19.0.5"
         ],
         "mac": [
-            "AA-58-67-2A-D5-C3",
-            "E2-44-B5-D4-A1-F1"
+            "BA-5F-DB-BC-50-E9",
+            "FA-9D-2D-1C-25-C1"
         ],
-        "name": "elastic-agent-69632",
+        "name": "elastic-agent-95605",
         "os": {
             "family": "",
             "kernel": "6.10.14-linuxkit",
@@ -108,28 +109,20 @@ An example event for `audit` looks as following:
     "input": {
         "type": "cel"
     },
+    "log": {
+        "origin": {
+            "file": {
+                "line": 878
+            }
+        }
+    },
     "secret": {
         "line": 878,
         "type": "GENERIC_CREDS_WINDOWS_PASSWORD",
         "value": "asd123123"
     },
     "vulnerability": {
-        "classification": "GENERIC_CREDS_WINDOWS_PASSWORD",
         "description": "asd123123"
     }
 }
 ```
-
-**Exported fields**
-
-| Field | Description | Type |
-|---|---|---|
-| @timestamp | Event timestamp. | date |
-| data_stream.dataset | Data stream dataset. | constant_keyword |
-| data_stream.namespace | Data stream namespace. | constant_keyword |
-| data_stream.type | Data stream type. | constant_keyword |
-| input.type | Input type | keyword |
-| log.offset | Log offset | long |
-| secret.line | Line number for the event occurred. | long |
-| secret.type | Type of the secret that was exposed. | keyword |
-| secret.value | Value that was exposed in the event. | keyword |
