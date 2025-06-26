@@ -54,7 +54,7 @@ streams:
         required: true
         show_user: true
         secret: true
-        default: foobar
+        default: xxxx
       - name: processors
         type: yaml
         title: Processors
